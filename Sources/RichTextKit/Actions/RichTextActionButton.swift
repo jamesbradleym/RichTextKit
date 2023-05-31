@@ -94,14 +94,6 @@ struct RichTextActionButton_Previews: PreviewProvider {
                         action: .decrementFontSize,
                         context: context,
                         fillVertically: true)
-                    RichTextActionButton(
-                        action: .decreaseIndent,
-                        context: context,
-                        fillVertically: true)
-                    RichTextActionButton(
-                        action: .increaseIndent,
-                        context: context,
-                        fillVertically: true)
                 }
                 .fixedSize(horizontal: false, vertical: true)
                 .padding()

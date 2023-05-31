@@ -35,7 +35,7 @@ public struct RichTextKeyboardToolbar<LeadingButtons: View, TrailingButtons: Vie
     public init(
         context: RichTextContext,
         leadingActions: [RichTextAction] = [.undo, .redo, .copy],
-        trailingActions: [RichTextAction] = [.decreaseIndent, .increaseIndent, .dismissKeyboard],
+        trailingActions: [RichTextAction] = [.dismissKeyboard],
         spacing: Double = 15,
         height: Double = 50,
         style: RichTextKeyboardToolbarStyle = .standard,

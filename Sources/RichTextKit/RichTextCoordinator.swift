@@ -516,11 +516,6 @@ extension RichTextCoordinator {
             richTextContext.textAlignment = textAlignment
         }
         
-        let textIndent = RichTextIndent.increase
-        if richTextContext.textIndent != textIndent {
-            richTextContext.textIndent = textIndent
-        }
-        
         updateTextViewAttributesIfNeeded()
     }
     

@@ -29,8 +29,6 @@ public enum RTKL10n: String, CaseIterable, Identifiable {
     actionDecrementFontSize,
     actionRedoLatestChange,
     actionUndoLatestChange,
-    actionIncreaseIndent,
-    actionDecreaseIndent,
 
     fileFormatRtk,
     fileFormatPdf,
@@ -60,8 +58,6 @@ public enum RTKL10n: String, CaseIterable, Identifiable {
     textAlignmentRight,
     textAlignmentCentered,
     textAlignmentJustified,
-    
-    indent
 }
 
 public extension RTKL10n {

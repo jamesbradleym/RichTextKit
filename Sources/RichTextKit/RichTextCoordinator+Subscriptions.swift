@@ -34,8 +34,6 @@ extension RichTextCoordinator {
         subscribeToShouldPasteText()
         subscribeToShouldRedoLatestChange()
         subscribeToShouldUndoLatestChange()
-        subscribeToShouldDecreaseIndent()
-        subscribeToShouldIncreaseIndent()
     }
 }
 
@@ -192,22 +190,6 @@ private extension RichTextCoordinator {
                 receiveValue: { [weak self] in self?.undoLatestChange($0) })
             .store(in: &cancellables)
     }
-    
-    func subscribeToShouldDecreaseIndent() {
-        richTextContext.$shouldDecreaseIndent
-            .sink(
-                receiveCompletion: { _ in },
-                receiveValue: { [weak self] in self?.setIndent(.decrease, to: $0)})
-            .store(in: &cancellables)
-    }
-    
-    func subscribeToShouldIncreaseIndent() {
-        richTextContext.$shouldIncreaseIndent
-            .sink(
-                receiveCompletion: { _ in },
-                receiveValue: { [weak self] in self?.setIndent(.increase, to: $0)})
-            .store(in: &cancellables)
-    }
 }
 
 internal extension RichTextCoordinator {
@@ -322,10 +304,6 @@ internal extension RichTextCoordinator {
         guard shouldUndo else { return }
         textView.undoLatestChange()
         syncContextWithTextView()
-    }
-    
-    func setIndent(_ indent: RichTextIndent, to newValue: Bool) {
-        textView.setCurrentRichTextIndent(to: indent)
     }
 }
 
